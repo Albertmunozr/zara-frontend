@@ -11,11 +11,11 @@ function Breadcrumbs() {
         to="/"
         className={
           location.pathname === "/"
-            ? "breadcrumb-active"
-            : "breadcrumb-not-active"
+            ? "breadcrumb-item active"
+            : "breadcrumb-item"
         }
       >
-        Home
+        Listado de Productos
       </Link>
       {location.pathname.startsWith("/item") ? " / " + breadcrumb : null}
     </nav>

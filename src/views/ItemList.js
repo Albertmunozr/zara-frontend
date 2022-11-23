@@ -10,14 +10,17 @@ function ItemList() {
 
   return (
     <>
-      <SearchBar />
-      <h1>Listado de Productos</h1>
+      <div className="row justify-content-end">
+        <div className="col-4">
+          <SearchBar />
+        </div>
+      </div>
 
-      <ul>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {items.map((item) => (
           <Item key={item.id} items={item} />
         ))}
-      </ul>
+      </div>
     </>
   );
 }

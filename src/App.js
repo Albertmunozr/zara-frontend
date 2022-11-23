@@ -7,7 +7,7 @@ import ItemDetail from "./views/ItemDetail";
 
 function App() {
   return (
-    <>
+    <div className="container">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -15,7 +15,7 @@ function App() {
           <Route path="item/:id" element={<ItemDetail />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

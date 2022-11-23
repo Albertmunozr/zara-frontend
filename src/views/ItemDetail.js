@@ -40,56 +40,81 @@ function ItemDetail() {
   return (
     <>
       {
-        <div className="item">
-          <h2>ID: {item.id}</h2>
-          <div className="image">
-            <img src={item.imgUrl} alt={item.model} />
+        <div className="item row">
+          <div className="imageDetail align-self-center col-sm-12 col-md-4 p-3">
+            <img src={item.imgUrl} alt={item.model} className="img-fluid" />
           </div>
-          <div className="description">
-            <p>{item.brand}</p>
-            <p>{item.model}</p>
-            <p>Precio: {item.price}€</p>
-            <p>{item.cpu}</p>
-            <p>{item.ram}</p>
-            <p>{item.os}</p>
-            <p>{item.displayResolution}</p>
-            <p>{item.battery}</p>
-            <p>{item.primaryCamera}</p>
-            <p>{item.dimentions}</p>
-            <p>{item.weight}</p>
+
+          <div className="col-sm-12 col-md-8 p-3">
+            <div className="description">
+              <p>
+                <span className="fw-bold">Marca:</span> {item.brand}
+              </p>
+              <p>
+                <span className="fw-bold">Modelo:</span> {item.model}
+              </p>
+              <p>
+                <span className="fw-bold">Precio:</span> {item.price}€
+              </p>
+              <p>
+                <span className="fw-bold">CPU:</span> {item.cpu}
+              </p>
+              <p>
+                <span className="fw-bold">RAM:</span> {item.ram}
+              </p>
+              <p>
+                <span className="fw-bold">OS:</span> {item.os}
+              </p>
+              <p>
+                <span className="fw-bold">Resolución:</span>{" "}
+                {item.displayResolution}
+              </p>
+              <p>
+                <span className="fw-bold">Batería:</span> {item.battery}
+              </p>
+              <p>
+                <span className="fw-bold">Cámara:</span> {item.primaryCamera}
+              </p>
+              <p>
+                <span className="fw-bold">Dimensiones:</span> {item.dimentions}
+              </p>
+              <p>
+                <span className="fw-bold">Peso:</span> {item.weight} gr.
+              </p>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="row">
+                Almacenamiento:
+                <select name="storage" className="form-select">
+                  {item.options.storages.map((storage) => {
+                    return (
+                      <option key={storage.name} value={storage.name}>
+                        {storage.name}
+                      </option>
+                    );
+                  })}
+                </select>
+                Colores:
+                <select name="color" className="form-select">
+                  {item.options.colors.map((color) => {
+                    return (
+                      <option key={color.name} value={color.name}>
+                        {color.name}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <button className="btn btn-success my-4">
+                Añadir al carrito
+              </button>
+            </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div>
-              Almacenamiento:
-              <select name="storage">
-                {item.options.storages.map((storage) => {
-                  return (
-                    <option key={storage.name} value={storage.name}>
-                      {storage.name}
-                    </option>
-                  );
-                })}
-              </select>
-              ;
-            </div>
-            <div>
-              Colores:
-              <select name="color">
-                {item.options.colors.map((color) => {
-                  return (
-                    <option key={color.name} value={color.name}>
-                      {color.name}
-                    </option>
-                  );
-                })}
-              </select>
-              ;
-            </div>
-            <button>Añadir</button>
-          </form>
+          <Link to="/" className="btn btn-outline-primary col-2">
+            Volver a la lista
+          </Link>
         </div>
       }
-      <Link to="/">Volver a la lista</Link>
     </>
   );
 }

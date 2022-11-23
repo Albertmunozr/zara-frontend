@@ -1,9 +1,18 @@
-import React from "react";
+//import React, { useState } from "react";
 
 function SearchBar() {
+  //const [search, setSearch] = useState();
+
   return (
     <>
-      <p>SearchBar</p>
+      <div>
+        <input
+          type="text"
+          placeholder="Buscar por marca o modelo"
+          //value={search}
+          className="form-control my-3"
+        />
+      </div>
     </>
   );
 }
