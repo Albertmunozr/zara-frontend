@@ -32,7 +32,6 @@ function ItemDetail() {
     const storageCode = e.target.elements.storage.options.selectedIndex + 1;
 
     addItem({ id, colorCode, storageCode });
-    //console.log(id, storageCode, colorCode);
 
     dispatch(addToCart(1));
   };
