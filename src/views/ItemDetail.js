@@ -110,7 +110,11 @@ function ItemDetail() {
               </button>
             </form>
           </div>
-          <Link to="/" className="btn btn-outline-primary col-2">
+          <Link
+            to="/"
+            className="btn btn-outline-primary col-4 m-3"
+            role="button"
+          >
             Volver a la lista
           </Link>
         </div>
