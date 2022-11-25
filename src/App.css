@@ -1,3 +1,11 @@
 .imageDetail img {
-  width: 80%;
+  width: 70%;
+}
+
+.card:hover {
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
 }

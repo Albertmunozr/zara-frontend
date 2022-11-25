@@ -8,11 +8,13 @@ function Header() {
   return (
     <div className="row text-bg-dark p-4 rounded-bottom">
       <div className="col">
-        <Link to="/">Zara Front End</Link>
+        <Link to="/" className="text-decoration-none">
+          <h1 className="display-4 text-secondary">Zara Frontend</h1>
+        </Link>
         <Breadcrumbs />
       </div>
       <div className="col align-self-center text-end">
-        <p>Carrito: {cart}</p>
+        <p className="fw-bold">Carrito: {cart}</p>
       </div>
     </div>
   );

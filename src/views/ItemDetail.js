@@ -41,11 +41,11 @@ function ItemDetail() {
     <>
       {
         <div className="item row">
-          <div className="imageDetail align-self-center col-sm-12 col-md-4 p-3">
+          <div className="imageDetail align-self-center col-sm-12 col-md-6 p-3">
             <img src={item.imgUrl} alt={item.model} className="img-fluid" />
           </div>
 
-          <div className="col-sm-12 col-md-8 p-3">
+          <div className="col-sm-12 col-md-6 p-3">
             <div className="description">
               <p>
                 <span className="fw-bold">Marca:</span> {item.brand}
@@ -83,7 +83,7 @@ function ItemDetail() {
               </p>
             </div>
             <form onSubmit={handleSubmit}>
-              <div className="row">
+              <div className="d-grid gap-2 col-2 justify-content-start">
                 Almacenamiento:
                 <select name="storage" className="form-select">
                   {item.options.storages.map((storage) => {

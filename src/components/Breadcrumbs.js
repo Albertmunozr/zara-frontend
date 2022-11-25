@@ -6,13 +6,13 @@ function Breadcrumbs() {
   const breadcrumb = useSelector((state) => state.breadcrumb);
 
   return (
-    <nav>
+    <nav className="fw-bold">
       <Link
         to="/"
         className={
           location.pathname === "/"
             ? "breadcrumb-item active"
-            : "breadcrumb-item"
+            : "text-light breadcrumb-item"
         }
       >
         Listado de Productos
